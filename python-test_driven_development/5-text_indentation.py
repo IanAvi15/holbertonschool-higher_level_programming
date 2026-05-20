@@ -26,4 +26,4 @@ def text_indentation(text):
         else:
             result += char
 
-    print(result.strip())
+    print(result, end="")
