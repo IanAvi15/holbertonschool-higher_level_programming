@@ -141,4 +141,39 @@ When div is 0.0:
     >>> matrix_divided([[1, 2]], 0.0)
     Traceback (most recent call last):
         ...
-    ZeroDivisionError: division by zero
+    ZeroDivisionError: division by zer
+
+    Special float values (inf and nan)
+===================================
+
+Division with infinity:
+    >>> matrix_divided([[1, 2, 3]], float('inf'))
+    [[0.0, 0.0, 0.0]]
+
+Matrix with infinity divided by integer:
+    >>> matrix_divided([[float('inf'), 2]], 2)
+    [[inf, 1.0]]
+
+Matrix with NaN divided by integer:
+    >>> matrix_divided([[float('nan'), 2]], 2)
+    [[nan, 1.0]]
+
+Matrix with infinity divided by infinity:
+    >>> result = matrix_divided([[float('inf'), 2]], float('inf'))
+    >>> result[0][0] != result[0][0]
+    True
+
+Missing arguments
+=================
+
+Missing div argument:
+    >>> matrix_divided([[1, 2]])
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Missing all arguments:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
