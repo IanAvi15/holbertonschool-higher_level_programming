@@ -141,7 +141,7 @@ When div is 0.0:
     >>> matrix_divided([[1, 2]], 0.0)
     Traceback (most recent call last):
         ...
-    ZeroDivisionError: division by zer
+    ZeroDivisionError: division by zero
 
     Special float values (inf and nan)
 ===================================
