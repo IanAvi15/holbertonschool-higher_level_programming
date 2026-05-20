@@ -99,3 +99,43 @@ When b is a boolean:
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
+    Special float values (inf and nan)
+===================================
+
+Division with infinity:
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Division with NaN:
+    >>> add_integer(float('nan'), 2)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+NaN as second argument:
+    >>> add_integer(5, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Missing arguments
+=================
+
+Missing b argument is allowed (uses default 98):
+    >>> add_integer(1)
+    99
+
+Missing a argument:
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Missing both arguments:
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
