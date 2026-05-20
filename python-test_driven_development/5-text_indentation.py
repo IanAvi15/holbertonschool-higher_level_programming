@@ -18,12 +18,17 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    result = ""
-    for char in text:
+    i = 0
+    while i < len(text):
+        char = text[i]
         if char in ".?:":
-            result += char
-            result += "\n\n"
+            print(char)
+            print()
+            # Skip all spaces after punctuation
+            i += 1
+            while i < len(text) and text[i] == " ":
+                i += 1
+            continue
         else:
-            result += char
-
-    print(result, end="")
+            print(char, end="")
+        i += 1
