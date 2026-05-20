@@ -1,0 +1,101 @@
+===========================
+How to use 0-add_integer.py
+===========================
+
+This module provides an integer addition function that handles integers and floats.
+
+Using ``add_integer``
+=====================
+
+The function takes two parameters: ``a`` (required) and ``b`` (optional, defaults to 98).
+
+Basic addition with two integers:
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+Adding with a negative integer:
+    >>> add_integer(100, -2)
+    98
+
+Using the default value for b:
+    >>> add_integer(2)
+    100
+
+Adding a float and an integer (float is casted to int):
+    >>> add_integer(100.3, -2)
+    98
+
+Adding two floats (both casted to integers):
+    >>> add_integer(10.5, 20.7)
+    30
+
+Negative float addition:
+    >>> add_integer(-5.8, -3.2)
+    -8
+
+Large numbers:
+    >>> add_integer(1000000, 2000000)
+    3000000
+
+Float with default b parameter:
+    >>> add_integer(50.9)
+    148
+
+Zero values:
+    >>> add_integer(0, 0)
+    0
+
+    >>> add_integer(0)
+    98
+
+TypeError cases
+===============
+
+When a is not an integer or float:
+    >>> add_integer("hello", 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+When b is not an integer or float:
+    >>> add_integer(5, "world")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+When a is None:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+When b is None:
+    >>> add_integer(5, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+When a is a list:
+    >>> add_integer([1, 2], 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+When b is a dictionary:
+    >>> add_integer(5, {'key': 'value'})
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+When a is a boolean (boolean is instance of int in Python, but we reject it):
+    >>> add_integer(True, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+When b is a boolean:
+    >>> add_integer(5, False)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
