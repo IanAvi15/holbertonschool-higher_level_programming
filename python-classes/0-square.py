@@ -11,4 +11,4 @@ class Square:
     This class serves as a foundation for future enhancements to represent
     a square shape.
     """
-    pass
+pass
