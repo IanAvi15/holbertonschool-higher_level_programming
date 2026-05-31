@@ -37,3 +37,11 @@
 [1, 1, 2]
 >>> print(my_list5)
 [1, 1, 2]
+>>> my_list6 = MyList()
+>>> my_list6.append(3)
+>>> my_list6.append(1)
+>>> my_list6.append(2)
+>>> my_list6.print_sorted()
+[1, 2, 3]
+>>> print(my_list6)
+[3, 1, 2]
