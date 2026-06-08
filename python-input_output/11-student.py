@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines a Student class with serialization and reload support."""
+"""Module that defines a Student class with serialization support."""
 
 
 class Student:
