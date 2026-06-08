@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that provides a function to deserialize a JSON string to an object."""
+"""Module that provides a function to deserialize a JSON string."""
 import json
 
 
