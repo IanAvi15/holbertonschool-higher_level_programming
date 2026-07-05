@@ -18,9 +18,9 @@ if __name__ == "__main__":
     )
     # Create a cursor and build the query using the user's search term
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-        sys.argv[4]
-    )
+    query = (
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
+    ).format(sys.argv[4])
     cur.execute(query)
     # Print each row as a tuple
     for row in cur.fetchall():
