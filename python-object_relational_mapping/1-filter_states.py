@@ -18,7 +18,9 @@ if __name__ == "__main__":
     )
     # Create a cursor and execute the query, sorted by states.id
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    )
     # Print each row as a tuple
     for row in cur.fetchall():
         print(row)
